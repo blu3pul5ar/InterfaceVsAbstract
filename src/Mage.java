@@ -40,9 +40,13 @@ public class Mage extends MagicUser{
         b.setHealth(b.getHealth() - this.attack);
     }
 
+    /**
+     *
+     */
     @Override
     public void block() {
     }
+    @Override
     public void rest(){
         if(this.mana < 100){
             this.mana += 10;
@@ -99,14 +103,17 @@ public class Mage extends MagicUser{
         this.attack = attack;
     }
 
+    @Override
     public void takeDamage(int d) {
         this.health -= d;
     }
 
+    @Override
     public String getName() {
         return Name;
     }
 
+    @Override
     public void setName(String Name) {
         this.Name = Name;
     }

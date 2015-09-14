@@ -20,6 +20,7 @@ public class healSpell extends spell{
     }
     
     
+    @Override
     public void levelUp(){
         this.setPower(this.getPower()+ 5);
     }

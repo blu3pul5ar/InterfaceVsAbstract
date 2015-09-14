@@ -17,6 +17,7 @@ public class AttackSpell extends spell{
         super(name, power);
         this.setCost(cost);
     }
+    @Override
     public void levelUp(){
         this.setPower(this.getPower()+5);
     }
