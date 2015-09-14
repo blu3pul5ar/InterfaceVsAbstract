@@ -13,11 +13,7 @@ public class Mage extends MagicUser{
     private int attack;
     private int mana;
     private String Name;
-    private AttackSpell Fireball = new AttackSpell("FireBall",10,20);
-    private AttackSpell Frost = new AttackSpell("Frost",5,10);
-    private AttackSpell Lightningbolt = new AttackSpell("LightningBolt",25,50);
-    private healSpell heal = new healSpell("Heal",25,20);
-    private final spell[] spellBook = {Fireball,Frost,Lightningbolt,heal};
+   
     public Mage(String Name) {
         this.Name=Name;
         health = 100;
@@ -63,17 +59,7 @@ public class Mage extends MagicUser{
     }
 
  
-    @Override
-    public void castSpell(int magic, Being b){
-        spell spell = spellBook[magic];
-        if(spell.getCost() > this.getMana()){
-            System.out.println("Not Enough Mana!?!");
-            return;
-        }
-        System.out.println(this.Name + " cast " + spell.getName() + " at " + b.getName());
-        spell.cast(b);
-        this.mana -= spell.getCost();
-    }
+   
 
     @Override
     public void setMana(int m) {
@@ -116,10 +102,6 @@ public class Mage extends MagicUser{
     @Override
     public void setName(String Name) {
         this.Name = Name;
-    }
-
-    public spell[] getSpellBook() {
-        return spellBook;
     }
     
 }
